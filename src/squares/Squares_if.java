@@ -1,7 +1,9 @@
 package squares;
 
 public interface Squares_if {
-	public double getRx();
-	public double[]  getDx();
+
+	public double getObject();
+
+	public double[] getDx();
 
 }
