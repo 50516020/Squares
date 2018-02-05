@@ -8,11 +8,11 @@ public class Squares_lib implements Squares_if{
 
 	double x[],y[];
 
-	double theta[] = new double[2];
+	double theta[]=new double[2];
 
-	double eta = 0.01;
+	double eta=0.1;
 
-	
+
 
 	public Squares_lib(double[] x, double[] y) {
 
@@ -30,11 +30,11 @@ public class Squares_lib implements Squares_if{
 
 		// TODO Auto-generated method stub
 
-		double object = 0; 
+		double object=0;
 
-		for(int i = 0; i < x.length; i++) {
+		for(int i=0;i<x.length;i++) {
 
-			object += Math.pow(y[i] - ( theta[0] + theta[1] * x[i]), 2);
+			object+=Math.pow(y[i]-(theta[0]+theta[1]*x[i]),2);
 
 		}
 
@@ -50,19 +50,19 @@ public class Squares_lib implements Squares_if{
 
 		// TODO Auto-generated method stub
 
-		double object[] = new double[2];
+		double object[]=new double[2];
 
-		for(int i = 0; i < x.length; i++){
+		for(int i=0;i<x.length;i++) {
 
-		object[0] += theta[0] + theta[1] * x[i] - y[i];
+			object[0]+=theta[0]+theta[1]*x[i]-y[i];
 
-		object[1] += (theta[0] + theta[1] * x[i] - y[i])*x[i];
+			object[1]+=(theta[0]+theta[1]*x[i]-y[i])*x[i];
 
 		}
 
-		theta[0] -= eta * object[0];
+		theta[0]-=eta*object[0];
 
-		theta[1] -= eta * object[1];
+		theta[1]-=eta*object[1];
 
 		return theta;
 

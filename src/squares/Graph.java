@@ -4,6 +4,8 @@ package squares;
 
 import java.awt.BorderLayout;
 
+import java.awt.FlowLayout;
+
 import java.awt.Frame;
 
 import java.awt.event.ActionEvent;
@@ -28,7 +30,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 
 
-public class Graph extends Frame implements ActionListener, WindowListener{
+public class Graph extends Frame implements ActionListener,WindowListener{
 
 	
 
@@ -36,41 +38,39 @@ public class Graph extends Frame implements ActionListener, WindowListener{
 
 		addWindowListener(this);
 
-		setTitle("Squares");
+		setTitle("Square");
 
-		DefaultCategoryDataset data = new DefaultCategoryDataset();
+		DefaultCategoryDataset data=new DefaultCategoryDataset();
 
 		for(int i=0; i<value.length; i++) {
 
-			data.addValue(value[i], "", i+"");
+			data.addValue(value[i], "",i+ "");
 
 		}
 
-	    JFreeChart chart = 
+		
 
-	      ChartFactory.createLineChart("Squares",
+		JFreeChart chart=ChartFactory.createLineChart(
 
-	                                   "Time",
+				"Squares",
 
-	                                   "Value",
+				"Time",
 
-	                                   data,
+				"Value",
 
-	                                   PlotOrientation.VERTICAL,
+				data,
 
-	                                   true,
+				PlotOrientation.VERTICAL,
 
-	                                   false,
+				true,
 
-	                                   false);
+				false,
 
+				false);
 
+		ChartPanel cpanel=new ChartPanel(chart);
 
-	    ChartPanel cpanel = new ChartPanel(chart);
-
-	    add(cpanel, BorderLayout.CENTER);
-
-
+		add(cpanel,BorderLayout.CENTER);
 
 	}
 
@@ -78,7 +78,19 @@ public class Graph extends Frame implements ActionListener, WindowListener{
 
 	@Override
 
-	public void windowOpened(WindowEvent e) {
+	public void windowActivated(WindowEvent arg0) {
+
+		// TODO Auto-generated method stub
+
+		
+
+	}
+
+
+
+	@Override
+
+	public void windowClosed(WindowEvent e) {
 
 		// TODO Auto-generated method stub
 
@@ -102,19 +114,7 @@ public class Graph extends Frame implements ActionListener, WindowListener{
 
 	@Override
 
-	public void windowClosed(WindowEvent e) {
-
-		// TODO Auto-generated method stub
-
-		
-
-	}
-
-
-
-	@Override
-
-	public void windowIconified(WindowEvent e) {
+	public void windowDeactivated(WindowEvent e) {
 
 		// TODO Auto-generated method stub
 
@@ -138,7 +138,7 @@ public class Graph extends Frame implements ActionListener, WindowListener{
 
 	@Override
 
-	public void windowActivated(WindowEvent e) {
+	public void windowIconified(WindowEvent e) {
 
 		// TODO Auto-generated method stub
 
@@ -150,7 +150,7 @@ public class Graph extends Frame implements ActionListener, WindowListener{
 
 	@Override
 
-	public void windowDeactivated(WindowEvent e) {
+	public void windowOpened(WindowEvent e) {
 
 		// TODO Auto-generated method stub
 
@@ -169,6 +169,8 @@ public class Graph extends Frame implements ActionListener, WindowListener{
 		
 
 	}
+
+	
 
 
 
